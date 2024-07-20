@@ -1,10 +1,18 @@
-import { Card } from "@/components/Card";
-import Image from "next/image";
+import { CardLink } from "@/app/card";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Card/>
-    </main>
+    <section className="flex flex-row gap-16">
+        <CardLink
+          href="/create"
+          title="Create"
+          index={3}
+        />
+        <CardLink
+          href="/join"
+          title="Join"
+          index={9}
+        />
+      </section>
   );
 }

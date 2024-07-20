@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Yeseva_One } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+import StoreProvider from "./StoreProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const titleFont = Yeseva_One({ weight: "400", subsets: [ 'latin' ]});
+const font = Playfair_Display({ weight: "400", subsets: [ 'latin' ]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +18,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body className={font.className}>
+          <div className="flex min-h-screen flex-col items-center justify-between p-4">
+            <header>
+              <h1 className={`${titleFont.className} text-4xl`}>Secrets of the Deck</h1>
+            </header>
+            <main className="w-full">
+              {children}
+            </main>
+            <footer
+              className="flex"
+            >
+              <a href="">GitHub</a>
+              <a href="">ItchIO</a>
+            </footer>
+          </div>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
