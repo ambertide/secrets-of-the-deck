@@ -22,10 +22,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={font.className}>
           <div className="flex min-h-screen flex-col items-center justify-between p-4">
-            <header>
-              <h1 className={`${titleFont.className} text-4xl`}>Secrets of the Deck</h1>
-            </header>
-            <main className="w-full">
+            <main className="flex flex-1 w-full">
               {children}
             </main>
             <footer

@@ -1,9 +1,0 @@
-.card-link:hover {
-  scale: 1.05;
-  transition: 0.25s;
-  box-shadow: 0px 0px 5px 1px #000000;
-}
-
-.card-link {
-  transition: 0.25s;
-}
